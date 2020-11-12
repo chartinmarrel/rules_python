@@ -1,0 +1,21 @@
+load("@rules_python//python:defs.bzl", "py_library", "py_test")
+load("@pip//:requirements.bzl", "requirement")
+
+py_library(
+    name = "main",
+    srcs = ["main.py"],
+    srcs_version = "PY3",
+    visibility = ["//visibility:public"],
+    deps = [
+        requirement("requests"),
+    ],
+)
+
+py_test(
+    name = "test_main",
+    visibility = ["//visibility:public"],
+    main = "test_main.py",
+    python_version = "PY3",
+    srcs = ["test_main.py"],
+    deps = [":main"],
+)
