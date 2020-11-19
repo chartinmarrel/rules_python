@@ -1,0 +1,19 @@
+load("@rules_python//python:defs.bzl", "py_test")
+
+py_test(
+    name = "test1",
+    visibility = ["//visibility:public"],
+    main = "entrypoint_one.py",
+    python_version = "PY3",
+    srcs = ["entrypoint_one.py", "test_one.py"],
+    deps = ["//lib:main"],
+)
+
+py_test(
+    name = "test2",
+    visibility = ["//visibility:public"],
+    main = "entrypoint_two.py",
+    python_version = "PY3",
+    srcs = ["entrypoint_two.py", "test_two.py"],
+    deps = ["//lib:main"],
+)
