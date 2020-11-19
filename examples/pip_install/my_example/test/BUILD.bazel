@@ -5,7 +5,7 @@ py_test(
     visibility = ["//visibility:public"],
     main = "entrypoint_one.py",
     python_version = "PY3",
-    srcs = ["entrypoint_one.py", "test_one.py"],
+    srcs = ["entrypoint_one.py", "test_hello.py"],
     deps = ["//lib:main"],
 )
 
@@ -14,6 +14,6 @@ py_test(
     visibility = ["//visibility:public"],
     main = "entrypoint_two.py",
     python_version = "PY3",
-    srcs = ["entrypoint_two.py", "test_two.py"],
+    srcs = ["entrypoint_two.py", "test_hello.py"],
     deps = ["//lib:main"],
 )
